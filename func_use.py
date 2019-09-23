@@ -23,8 +23,8 @@ elif choose == '2':
     mkdir(d_name)
     print (d_name + " successfully created")
 elif choose == '3':
-    cmd = input('please give your command: ')
-    output = getoutput(cmd)
+    cmd = input('enter the website to ping: ')
+    output = getoutput('ping -c 5 '+cmd)
     print(output)
 else:
-    print("you have chosen: "+choose)
+    web = input('enter the website to ping: ')
