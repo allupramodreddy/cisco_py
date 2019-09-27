@@ -1,0 +1,21 @@
+---
+ - hosts: csr
+   tasks:
+    - name: I want to run cammand
+      ios_command:
+       commands:
+        - sh clock
+        - sh ip int br
+        - sh ver
+    - name: ping Google DNS
+      ios_ping:
+       dest: 8.8.8.8
+      register: output
+    - name: showing normal output
+      debug: 
+       msg: "hey my output of above command is {{output}}"
+    - name: execute me please
+      debug:
+       msg: "run me please"
+      tags:
+       - anything
